@@ -1,0 +1,17 @@
+<div class="form-container">
+    <div class="container" >
+        <%= form_for article, url: { action: action, id: article.id} do |f| %>
+        <%= f.label :title, "Title" %>
+        <span>:</span>
+        <br><br>
+        <%= f.text_field :title %>
+        <br><br>
+        <%= f.label :content, "Content" %>
+        <span>:</span>
+        <br><br>
+        <%= f.text_area :content, size: "50x10" %>
+        <br><br>
+        <%= f.submit %>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="btns">
+    <% if can? :update, article %>
+    <div class="edit-btn">
+        <%= link_to "Edit", edit_article_path(article) %>
+    </div>
+    <% end %>
+    <% if can? :destroy, article %>
+    <div class="delete-btn">
+        <%= link_to "Delete", article,data: {turbo_method: :delete} %>
+    </div>
+    <% end %>
+    <% if btn %>
+    <div class="show-btn">
+        <%= link_to "Show", article %>
+    </div>
+    <% end %>
+</div>

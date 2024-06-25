@@ -1,0 +1,19 @@
+<div class="navbar">
+    <div class="navbar-link">
+        <%= link_to "Home", root_path %>
+        <%= link_to "Article", article_index_path  %>
+    </div>
+    <div class="auth">
+        <% if auth_signed_in? %>
+        <p style="font-size: 20px;display: inline;font-weight: bold;">
+            <%= current_auth.email %>
+        </p>
+        <span> | </span>
+        <%= link_to "Sign-Out", destroy_auth_session_path, data: {turbo_method: :delete} %>
+        <% else %>
+        <%= link_to "Sign-In", new_auth_session_path %>
+        <span> | </span>
+        <%= link_to "Sign-Up", new_auth_registration_path %>
+        <% end %>
+    </div>
+</div>

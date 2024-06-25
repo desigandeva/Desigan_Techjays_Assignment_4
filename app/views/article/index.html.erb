@@ -1,0 +1,18 @@
+<h1 style="text-align: center;">Article</h1>
+<%  if @articles.empty? %>
+<p style="text-align: center;">There is no article available. </p>
+<% else %>
+<div class="articles">
+    <% @articles.each do |article| %>
+    <div class="article">
+        <%= render partial: 'article', locals: { article: article , btn: true} %>
+    </div>
+    <% end %>
+</div>
+<% end %>
+<br><br>
+<div class="btn">
+    <%= link_to "Add", new_article_path %>
+</div>
+
+<%= will_paginate @articles %>

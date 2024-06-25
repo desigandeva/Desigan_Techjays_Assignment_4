@@ -1,0 +1,24 @@
+<div class="data-container">
+    <div class="data">
+        <h2 style="text-align: center;">
+            <%= article.title %>
+        </h2>
+        <br>
+        <% if !btn %>
+        <p style="justify-content: center;align-items: center;text-align: center;font-size: 18px;padding: 5px 20px;">
+            <%= article.content %>
+        </p>
+        <br><br>
+        <%end%>
+        <div class="time">
+            <label>Created-at : </label>
+            <%= article.created_at %>
+            <br>
+            <label>Updated-at : </label>
+            <%= article.updated_at %>
+        </div>
+        <br>
+        <%= render partial:'button', locals: {article: article, btn: btn} %>
+        <br>
+    </div>
+</div>
